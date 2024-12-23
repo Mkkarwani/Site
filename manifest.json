@@ -5,7 +5,7 @@
   "start_url": "/home.html",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#4CAF50",  // This should match the header or primary color for the theme
+  "theme_color": "#4CAF50",
   "icons": [
     {
       "src": "/assets/icon.png",
