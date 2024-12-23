@@ -1,0 +1,28 @@
+/* style.css */
+
+/* Default Light Theme */
+body {
+  background-color: white;
+  color: black;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: #4CAF50;
+  color: white;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+/* Dark Theme */
+body.dark-theme {
+  background-color: #333;
+  color: white;
+}
+
+body.dark-theme header {
+  background-color: #555;
+}
