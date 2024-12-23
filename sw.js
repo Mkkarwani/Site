@@ -1,12 +1,13 @@
 const CACHE_NAME = 'studyfriends-pwa-cache-v1';
-const OFFLINE_URL = '/offline.html';
+const OFFLINE_URL = '/Site/offline.html';
 const urlsToCache = [
   '/',
-  '/home.html',
-  '/offline.html',
-  '/index.html',
-  '/assets/icon.png',
-  '/styles/style.css'
+  '/Site/',
+  '/Site/home.html',
+  '/Site/offline.html',
+  '/Site/index.html',
+  '/Site/assets/icon.png',
+  '/Site/styles/style.css'
 ];
 
 // Install service worker and cache necessary assets
