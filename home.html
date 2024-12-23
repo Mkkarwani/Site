@@ -3,17 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>Home - StudyFreinds Pro</title>
+  <title>StudyFriends Pro</title>
+  <link rel="stylesheet" href="/styles/style.css">
 </head>
 <body>
   <header>
-    <h1>StudyFreinds Pro</h1>
-    <button id="theme-toggle">Toggle Theme</button>
+    <h1>StudyFriends Pro</h1>
   </header>
+
   <main>
-    <p>Welcome to your StudyFreinds Pro homepage!</p>
+    <h2>Welcome to StudyFriends Pro</h2>
+    <p>This is your personalized study tool.</p>
   </main>
-  <script src="theme.js"></script>
+
+  <script>
+// Register service worker
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js')
+    .then((registration) => {
+      console.log('Service Worker registered with scope: ', registration.scope);
+    })
+    .catch((error) => {
+    console.log('Service Worker registration failed: ', error);
+    });
+}
+
+    // Dynamic theme switching based on system preference
+    const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+    const header = document.querySelector("header");
+
+    function applyTheme() {
+      if (prefersDarkScheme.matches) {
+        document.body.classList.add("dark-theme");
+        header.style.backgroundColor = "#333"; // Dark header color
+      } else {
+        document.body.classList.remove("dark-theme");
+        header.style.backgroundColor = "#4CAF50"; // Light header color
+      }
+    }
+
+    prefersDarkScheme.addEventListener("change", applyTheme);
+
+    applyTheme(); // Apply theme on load
+  </script>
 </body>
 </html>
