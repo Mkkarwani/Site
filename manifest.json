@@ -2,18 +2,18 @@
   "name": "StudyFriends Pro",
   "short_name": "StudyFriends Pro",
   "description": "An app to help you study with friends",
-  "start_url": "/home.html",
+  "start_url": "/Site/home.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#4CAF50",
   "icons": [
     {
-      "src": "/assets/icon.png",
+      "src": "/Site/assets/icon.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/assets/icon.png",
+      "src": "/Site/assets/icon.png",
       "sizes": "512x512",
       "type": "image/png"
     }
