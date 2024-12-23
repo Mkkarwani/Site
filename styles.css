@@ -1,0 +1,130 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+  color: #333;
+  background-color: #f9f9f9;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+/* Header */
+header {
+  background-color: #0078d7;
+  color: #ffffff;
+  padding: 10px 20px;
+  text-align: center;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 1.8rem;
+}
+
+header button {
+  background-color: #ffffff;
+  color: #0078d7;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+header button:hover {
+  background-color: #f1f1f1;
+}
+
+/* Main Content */
+main {
+  text-align: center;
+  padding: 20px;
+}
+
+main p {
+  font-size: 1.1rem;
+}
+
+/* Buttons */
+button {
+  background-color: #0078d7;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+button:hover {
+  background-color: #005bb5;
+}
+
+/* Install Page */
+.install-page {
+  text-align: center;
+  padding: 20px;
+}
+
+.install-page h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.install-page p {
+  margin-bottom: 20px;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Offline Page */
+.offline-page {
+  text-align: center;
+  padding: 20px;
+}
+
+.offline-page h1 {
+  font-size: 2rem;
+  color: #d9534f;
+  margin-bottom: 10px;
+}
+
+.offline-page p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+/* Theme-specific Styles */
+meta[name="theme-color"] {
+  transition: color 0.3s;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
+}
