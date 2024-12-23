@@ -1,18 +1,19 @@
 {
-  "short_name": "StudyFreinds",
-  "name": "StudyFreinds Pro",
+  "name": "StudyFriends Pro",
+  "short_name": "StudyFriends Pro",
+  "description": "An app to help you study with friends",
   "start_url": "/home.html",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#ffffff",
+  "theme_color": "#4CAF50",  // This should match the header or primary color for the theme
   "icons": [
     {
-      "src": "uicon-192x192.png",
+      "src": "/assets/icon.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "uicon-512x512.png",
+      "src": "/assets/icon.png",
       "sizes": "512x512",
       "type": "image/png"
     }
