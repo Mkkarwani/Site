@@ -6,7 +6,6 @@ const urlsToCache = [
   '/Site/home.html',
   '/Site/offline.html',
   '/Site/index.html',
-  '/Site/viewer.html',
   '/Site/assets/icon.png',
   '/Site/styles/style.css'
 ];
