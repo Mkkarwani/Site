@@ -1,23 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>StudyFriends Pro</title>
-  <link rel="stylesheet" href="/styles/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyFreinds Pro</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        :root {
+            --light-bg: #e3f2fd;
+            --dark-bg: #0d47a1;
+            --light-text: #000000;
+            --dark-text: #ffffff;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--light-bg);
+            color: var(--light-text);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: var(--dark-bg);
+                color: var(--dark-text);
+            }
+        }
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            max-width: 90%;
+            width: 400px;
+        }
+        @media (prefers-color-scheme: dark) {
+            .container {
+                background: rgba(0, 0, 0, 0.7);
+            }
+        }
+        .logo {
+            margin-bottom: 20px;
+        }
+        .logo img {
+            max-width: 100px;
+            border-radius: 50%;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        p {
+            margin-bottom: 20px;
+        }
+        .instructions {
+            margin-bottom: 20px;
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .links a {
+            text-decoration: none;
+            color: #ffffff;
+            background: #2196F3;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        .links a:hover {
+            background: #1976D2;
+            transform: scale(1.05);
+        }
+        footer {
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .links a {
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>StudyFriends Pro</h1>
-  </header>
-
-  <main>
-    <h2>Welcome to StudyFriends Pro</h2>
-    <p>This is your personalized study tool.</p>
-    <a href="https://studyfreinds.22web.org/">Go</>
-  </main>
-
-  <script>
+    <div class="container">
+        <div class="logo">
+            <img src="/Site/assets/icon.png" alt="StudyFreinds Pro Logo">
+        </div>
+        <h1>StudyFreinds Pro</h1>
+        <p>Your go-to platform for offline file previews and more!</p>
+        <div class="instructions">
+            <p>Important: Always ensure you have an internet connection when using this app.</p>
+        </div>
+        <div class="links">
+            <a href="viewer.html" target="_blank">Open Viewer for ENC File Previews</a>
+            <a href="https://studyfreinds.22web.org/" target="_blank">Visit StudyFreinds Website for More Resources</a>
+        </div>
+        <footer>
+            &copy; 2025 StudyFreinds Pro. All rights reserved.
+        </footer>
+    </div>
+      <script>
 // Register service worker
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/sw.js')
@@ -28,25 +127,6 @@ if ('serviceWorker' in navigator) {
     console.log('Service Worker registration failed: ', error);
     });
 }
-
-    // Dynamic theme switching based on system preference
-    const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-
-    const header = document.querySelector("header");
-
-    function applyTheme() {
-      if (prefersDarkScheme.matches) {
-        document.body.classList.add("dark-theme");
-        header.style.backgroundColor = "#333"; // Dark header color
-      } else {
-        document.body.classList.remove("dark-theme");
-        header.style.backgroundColor = "#4CAF50"; // Light header color
-      }
-    }
-
-    prefersDarkScheme.addEventListener("change", applyTheme);
-
-    applyTheme(); // Apply theme on load
-  </script>
+     </script>
 </body>
 </html>
