@@ -6,6 +6,11 @@ const urlsToCache = [
   '/Site/home.html',
   '/Site/offline.html',
   '/Site/index.html',
+  '/Site/viewer.html',
+  '/Site/pdfjs/pdf.mjs',
+  '/Site/pdfjs/pdf.mjs.map',
+  '/Site/pdfjs/pdf.worker.mjs',
+  '/Site/pdfjs/pdf.worker.mjs.map',
   '/Site/assets/icon.png',
   '/Site/styles/style.css'
 ];
