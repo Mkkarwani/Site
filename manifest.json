@@ -4,8 +4,8 @@
   "description": "An app to help you study with friends",
   "start_url": "/Site/home.html",
   "display": "standalone",
-  "background_color": "#408cff",
-  "theme_color": "#408cff",
+  "background_color": "#fff",
+  "theme_color": "#fff",
   "icons": [
     {
       "src": "/Site/assets/icon.png",
