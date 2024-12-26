@@ -3,15 +3,135 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>StudyFriends Pro Installation</title>
+  <title>Install StudyFriends Pro</title>
   <link rel="manifest" href="/Site/manifest.json">
-  <link rel="stylesheet" href="/Site/styles/style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: var(--background);
+      color: var(--text-color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .install-container {
+      background: var(--container-bg);
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+    }
+    h1 {
+      font-size: 1.8em;
+      margin-bottom: 10px;
+      color: var(--heading-color);
+    }
+    p {
+      font-size: 1em;
+      margin-bottom: 20px;
+      color: var(--text-color);
+    }
+    .important-instructions {
+      background: var(--instructions-bg);
+      color: var(--instructions-text);
+      border: 1px solid var(--instructions-border);
+      border-radius: 5px;
+      padding: 15px;
+      margin-bottom: 20px;
+      font-size: 0.9em;
+      text-align: left;
+    }
+    button {
+      background: var(--button-bg);
+      border: none;
+      color: var(--button-text);
+      padding: 10px 20px;
+      font-size: 1em;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: var(--button-hover);
+    }
+    footer {
+      margin-top: 20px;
+      font-size: 0.8em;
+      color: var(--footer-color);
+    }
+
+    :root {
+      --background: #e6f2ff;
+      --text-color: #333;
+      --container-bg: #ffffff;
+      --heading-color: #444;
+      --instructions-bg: #d9ecff;
+      --instructions-text: #084298;
+      --instructions-border: #b6d4fe;
+      --button-bg: #408cff;
+      --button-text: #ffffff;
+      --button-hover: #3678d6;
+      --footer-color: #666;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --background: #1a1a2e;
+        --text-color: #f0f0f0;
+        --container-bg: #162447;
+        --heading-color: #ffffff;
+        --instructions-bg: #112d4e;
+        --instructions-text: #d1e8ff;
+        --instructions-border: #1b4079;
+        --button-bg: #2653d4;
+        --button-text: #ffffff;
+        --button-hover: #1e46b6;
+        --footer-color: #aaa;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .install-container {
+        padding: 15px;
+        width: 100%;
+        max-width: 350px;
+      }
+      h1 {
+        font-size: 1.5em;
+      }
+      p {
+        font-size: 0.9em;
+      }
+      .important-instructions {
+        font-size: 0.8em;
+      }
+      button {
+        font-size: 0.9em;
+        padding: 8px 15px;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="install-container">
     <h1>Install StudyFriends Pro</h1>
-    <p>Click below to install the app on your device.</p>
+    <p>Click the button below to install the app on your device.</p>
+    
+    <div class="important-instructions">
+      <strong>Important Instructions:</strong>
+      <ul>
+        <li>Kindly connect to the internet while using this app.</li>
+        <li>Please do not clear the cache of this app or your browser after successful installation.</li>
+      </ul>
+    </div>
+
     <button id="installBtn">Install</button>
+    <footer>Powered by Cipher Web Developer</footer>
   </div>
 
   <script>
@@ -34,17 +154,16 @@
       });
     });
 
-// Register service worker
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/Site/sw.js')
-    .then((registration) => {
-      console.log('Service Worker registered with scope: ', registration.scope);
-    })
-    .catch((error) => {
-    console.log('Service Worker registration failed: ', error);
-    });
-}
-
+    // Register service worker
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/Site/sw.js')
+        .then((registration) => {
+          console.log('Service Worker registered with scope: ', registration.scope);
+        })
+        .catch((error) => {
+          console.log('Service Worker registration failed: ', error);
+        });
+    }
   </script>
 </body>
 </html>
