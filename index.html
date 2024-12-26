@@ -47,18 +47,26 @@
       text-align: left;
     }
     button {
-      background: var(--button-bg);
-      border: none;
-      color: var(--button-text);
-      padding: 10px 20px;
-      font-size: 1em;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    button:hover {
-      background: var(--button-hover);
-    }
+    background: var(--button-bg);
+    border: none;
+    color: var(--button-text);
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    position: relative; /* Ensures proper alignment */
+    margin: 0 auto; /* Centers the button */
+    display: block; /* Keeps the button block-level when visible */
+  }
+
+  button.hidden {
+    visibility: hidden; /* Hides the button but keeps its layout */
+  }
+
+  button:hover {
+    background: var(--button-hover);
+  }
     footer {
       margin-top: 20px;
       font-size: 0.8em;
@@ -136,23 +144,23 @@
 
   <script>
     let deferredPrompt;
-    const installBtn = document.getElementById('installBtn');
+const installBtn = document.getElementById('installBtn');
+installBtn.classList.add('hidden'); // Hide button initially
 
-    window.addEventListener('beforeinstallprompt', (e) => {
-      e.preventDefault();
-      deferredPrompt = e;
-      installBtn.style.display = 'block';
-
-      installBtn.addEventListener('click', () => {
-        deferredPrompt.prompt();
-        deferredPrompt.userChoice.then((choiceResult) => {
-          if (choiceResult.outcome === 'accepted') {
-            console.log('User accepted the installation prompt');
-          }
-          deferredPrompt = null;
-        });
-      });
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  installBtn.classList.remove('hidden'); // Show button when ready
+  installBtn.addEventListener('click', () => {
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then((choiceResult) => {
+      if (choiceResult.outcome === 'accepted') {
+        console.log('User accepted the installation prompt');
+      }
+      deferredPrompt = null;
     });
+  });
+});
 
     // Register service worker
     if ('serviceWorker' in navigator) {
