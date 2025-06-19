@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>UG Marksheet Grade</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+    form {
+      width: 50%;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    input[type="text"] {
+      width: 100%;
+      height: 40px;
+      margin-bottom: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    input[type="submit"] {
+      width: 100%;
+      height: 40px;
+      background-color: #4CAF50;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #3e8e41;
+    }
+  </style>
+</head>
+<body>
+  <form method="post" action="https://pgcsatna.com/website/result/print_ugmarksheet_grade_ug2124_iv.php" >                                                                   
+    <input type="hidden" name="examid" value="6">
+    <input type="hidden" name="semester" value="4">
+    <input type="hidden" name="ecategory" value="Regular">
+    <label for="rollno">Enter Roll Number:</label>
+    <input type="text" name="rollno" value="" placeholder="Roll Number">
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>
